@@ -28,5 +28,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/proof-Landing-Page-Generator/"
+  "devDependencies": {
+    "react-router-dom": "^5.1.2"
+  }
 }
