@@ -61,7 +61,7 @@ prepare:
  dependencies:
    - prepare
  script:
-   - ng test:headless --single-run
+   - react-scripts test:headless --single-run
 
 # Template for performing a build.
 #
@@ -76,10 +76,10 @@ prepare:
     - master
   script:
     - PATH=$PWD/node_modules/.bin:$PATH
-    - ng build --prod --deploy-url $ASSET_HOST/
+    - react-scripts build --deploy-url $ASSET_HOST/
   artifacts:
     paths:
-    - dist/
+    - build/
     expire_in: 1 day
 
 build:staging:
@@ -113,7 +113,7 @@ build:portfolio:
     - master
   when: manual
   script:
-    - ASSETS_PATH=dist
+    - ASSETS_PATH=build
     - FINGERPRINTED_NAMES='*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].*'
     # S3 sync the items that should be cached forever.
     - aws s3 sync --cache-control max-age=31556926 --exclude '*' --include "$FINGERPRINTED_NAMES" $ASSETS_PATH $S3_BUCKET_URL
