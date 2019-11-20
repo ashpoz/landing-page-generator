@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const routing = (
-    <Router basename={'proof-Landing-Page-Generator'}>
+    <Router basename={'/proof-Landing-Page-Generator'}>
         <Route path="/" component={App} />
     </Router>
 )
