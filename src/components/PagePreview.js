@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Form';
 
 class PagePreview extends React.Component {
     render() {

@@ -1,17 +1,20 @@
 import React from "react";
 
 class Form extends React.Component {
-    state = { pageTitle: '' };
+    // state = { 
+    //     pageTitle: '',
+    //     partnerName: '',
+    //     parterLogo: ''
+    // };
 
-    onInputChange = (event) => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value
-        });
-        console.log(this.state.pageTitle);
-    }
+    // onInputChange = (event) => {
+    //     const target = event.target;
+    //     const value = target.value;
+    //     const name = target.name;
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // }
 
   render() {
     return (
@@ -24,18 +27,18 @@ class Form extends React.Component {
                 name="pageTitle"
                 id="pageTitle"
                 placeholder="Enter Page Title"
-                onChange={this.onInputChange}
+                // onChange={this.onInputChange}
             />
             </div>
             <div className="form-group">
-            <label htmlFor="parterName">Partner Name:</label>
+            <label htmlFor="partnerName">Partner Name:</label>
             <input
                 type="text"
                 className="form-control"
-                name="parterName"
-                id="parterName"
+                name="partnerName"
+                id="partnerName"
                 placeholder="Parter Name"
-                onChange={this.onInputChange}
+                // onChange={this.onInputChange}
             />
             </div>
             <div className="form-group">
@@ -46,7 +49,7 @@ class Form extends React.Component {
                 name="parterLogo"
                 id="parterLogo"
                 placeholder="Parter Logo"
-                onChange={this.onInputChange}
+                // onChange={this.onInputChange}
             />
             </div>
             <button type="submit" className="btn btn-primary">
