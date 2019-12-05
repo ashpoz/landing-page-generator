@@ -18,7 +18,7 @@ class Form extends React.Component {
 
   render() {
     return (
-        <form className="col-md-6">
+        <form>
             <div className="form-group">
             <label htmlFor="pageTitle">Page Title:</label>
             <input

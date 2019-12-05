@@ -32,6 +32,8 @@
   },
   "homepage": ".",
   "devDependencies": {
-    "react-router-dom": "^5.1.2"
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4"
   }
 }

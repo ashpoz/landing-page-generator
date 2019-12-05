@@ -2,16 +2,22 @@ import React from "react";
 import Header from "./Header";
 import Form from "./Form";
 import PagePreview from "./PagePreview";
+import { createStore } from 'redux';
+
+function reducer(state, action) {
+  console.log('reducer', state, action);
+  return state;
+}
+
+const store = createStore(reducer);
 
 class App extends React.Component {
-  constuctor(props)  {
-    super(props);
-    this.state = {
+    state = {
       pageTitle: '',
       partnerName: '',
       parterLogo: ''
     };
-  }
+  
 
   updateState = (pageTitle) => {
     this.setState({pageTitle: pageTitle});
@@ -19,11 +25,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App container">
+      <div className="App container-fluid">
         <Header />
         <div className="row">
-          <Form {...this.props, update: this.updateState(this)} />
-          <PagePreview />
+          <div className="col-md-6">
+            <Form />
+          </div>
+          <div className="col-md-6" style={{backgroundColor: 'gray'}}>
+            <PagePreview />
+          </div>
         </div>
       </div>
     );
