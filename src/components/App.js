@@ -2,26 +2,11 @@ import React from "react";
 import Header from "./Header";
 import Form from "./Form";
 import PagePreview from "./PagePreview";
-import { createStore } from 'redux';
-
-function reducer(state, action) {
-  console.log('reducer', state, action);
-  return state;
-}
-
-const store = createStore(reducer);
 
 class App extends React.Component {
-    state = {
-      pageTitle: '',
-      partnerName: '',
-      parterLogo: ''
-    };
-  
-
-  updateState = (pageTitle) => {
-    this.setState({pageTitle: pageTitle});
-  }
+  handleForm = values => {
+    console.log(values);
+  };
 
   render() {
     return (
@@ -29,7 +14,7 @@ class App extends React.Component {
         <Header />
         <div className="row">
           <div className="col-md-6">
-            <Form />
+            <Form onSubmit={this.handleForm} />
           </div>
           <div className="col-md-6" style={{backgroundColor: 'gray'}}>
             <PagePreview />

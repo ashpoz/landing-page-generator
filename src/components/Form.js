@@ -1,63 +1,44 @@
 import React from "react";
+import { reduxForm, Field, change } from 'redux-form';
 
 class Form extends React.Component {
-    // state = { 
-    //     pageTitle: '',
-    //     partnerName: '',
-    //     parterLogo: ''
-    // };
-
-    // onInputChange = (event) => {
-    //     const target = event.target;
-    //     const value = target.value;
-    //     const name = target.name;
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // }
+  componentDidUpdate(prevProps) {
+    if (this.props.someValue !== prevProps.someValue) {
+      this.props.change("lpForm", "input", "newFormValue");
+    }
+  }
 
   render() {
+    // const onInputChange = (event, value) => {
+    //   console.log(value);
+    // }
+
+    console.log(this.props);
+    const { handleSubmit, change } = this.props;
     return (
-        <form>
-            <div className="form-group">
-            <label htmlFor="pageTitle">Page Title:</label>
-            <input
-                type="text"
-                className="form-control"
-                name="pageTitle"
-                id="pageTitle"
-                placeholder="Enter Page Title"
-                // onChange={this.onInputChange}
-            />
-            </div>
-            <div className="form-group">
-            <label htmlFor="partnerName">Partner Name:</label>
-            <input
-                type="text"
-                className="form-control"
-                name="partnerName"
-                id="partnerName"
-                placeholder="Parter Name"
-                // onChange={this.onInputChange}
-            />
-            </div>
-            <div className="form-group">
-            <label htmlFor="parterLogo">Partner Logo:</label>
-            <input
-                type="url"
-                className="form-control"
-                name="parterLogo"
-                id="parterLogo"
-                placeholder="Parter Logo"
-                // onChange={this.onInputChange}
-            />
-            </div>
-            <button type="submit" className="btn btn-primary">
-            Submit
-            </button>
-        </form>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="pageTitle">Page Title:</label>
+          <Field className="input" name="pageTitle" component="input" type="text" placeholder="First Name"/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="partnerName">Partner Name:</label>
+          <Field className="input" name="partnerName" component="input" type="text" placeholder="First Name"/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="parterLogo">Partner Logo:</label>
+          <Field className="input" name="parterLogo" component="input" type="text" placeholder="First Name"/>
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+      </form>
     );
   }
 }
+
+Form = reduxForm({
+  form: 'lpForm',
+})(Form);
 
 export default Form;
