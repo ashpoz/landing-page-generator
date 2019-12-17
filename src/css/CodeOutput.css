@@ -1,0 +1,8 @@
+.htmlOutput__code, .cssOutput__code {
+     height: 300px;
+     border: 1px solid black;   
+}
+
+.toolbar {
+    height: 40px;
+}
