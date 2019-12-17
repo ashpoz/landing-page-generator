@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from 'react-redux';
+import { formValueSelector } from 'redux-form';
+import '../css/pagePreview.css';
 
-class PagePreview extends React.Component {
-  render() {
-    // console.log(this.props.fields);
+const PagePreview = ( props ) => {
     return (
-      <div className="bg-white" style={{ backgroundColor: "white" }}>
+      <div className="bg-white" style={{ backgroundColor: "white", transform: "scale(0.9)", height: "600px", overflow: "auto" }}>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -14,9 +14,9 @@ class PagePreview extends React.Component {
           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
         />
         <link rel="stylesheet" href="../dist/style.css" />
-        <title>[PAGE TITLE]</title>
+        <title>{props.pageTitle}</title>
         <p style={{ textAlign: "center", margin: "15px 0 15px 0" }}>
-          Content brought to you by [PARTNER]
+          Content brought to you by {props.partnerName}
         </p>
         <div className="container">
           <div className="row">
@@ -35,11 +35,10 @@ class PagePreview extends React.Component {
                     alt=""
                   />
                   <h2>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    {props.heading}
                   </h2>
                   <p className="lead">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Aliquam at commodi...
+                    {props.subheading}
                   </p>
                 </div>
                 <div className="col-md-5  header__assetimg-wrap">
@@ -73,8 +72,9 @@ class PagePreview extends React.Component {
               </ul>
             </div>
             <div className="col-md-5 content__right">
-              <h2>Download the [PRODUCT]</h2>
+              <h2>Download the {props.product}</h2>
               <iframe
+                title="convertr-form"
                 src="https://spiceworks.cvtr.io/forms/general-lp-template"
                 style={{ width: "100%", height: "600px", overflow: "hidden" }}
                 frameBorder={0}
@@ -85,10 +85,14 @@ class PagePreview extends React.Component {
       </div>
     );
   }
-}
 
-const mapStateToProps = (state) => {
-  return { fields: state.fields }
-}
+  const mapStateToProps = state => ({
+    pageTitle: formValueSelector("lpForm")(state, "pageTitle"),
+    partnerName: formValueSelector("lpForm")(state, "partnerName"),
+    parterLogo: formValueSelector("lpForm")(state, "parterLogo"),
+    product: formValueSelector("lpForm")(state, "product"),
+    heading: formValueSelector("lpForm")(state, "heading"),
+    subheading: formValueSelector("lpForm")(state, "subheading"),
+  })
 
 export default connect(mapStateToProps)(PagePreview);
