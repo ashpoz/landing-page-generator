@@ -6,3 +6,10 @@ export const updateField = (field) => {
         payload: field
     }
 }
+
+export const updateHTMLOutput = (output) => {
+    return {
+        type: 'UPDATE_HTML',
+        payload: output
+    }
+}

@@ -4,6 +4,7 @@ import Form from "./Form";
 import PagePreview from "./PagePreview";
 import CodeOutput from "./CodeOutput";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,6 @@ class App extends React.Component {
       showCodeOutput: false
     });
   };
-
 
   render() {
     console.log(this.state.showCodeOutput);

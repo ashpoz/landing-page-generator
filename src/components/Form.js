@@ -2,11 +2,12 @@ import React from "react";
 import { reduxForm, Field } from 'redux-form';
 
 class Form extends React.Component {
-  componentDidUpdate(prevProps) {
-    if (this.props.someValue !== prevProps.someValue) {
-      this.props.change("lpForm", "input", "newFormValue");
-    }
-  }
+  // update values
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.someValue !== prevProps.someValue) {
+  //     this.props.change("lpForm", "input", "newFormValue");
+  //   }
+  // }
 
   render() {
     const { handleSubmit } = this.props;

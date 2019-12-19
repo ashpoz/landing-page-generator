@@ -1,11 +1,5 @@
 import React from "react";
-import reducer from "../reducers";
-import { updateHTMLOutput } from "../actions";
 import "../css/CodeOutput.css";
-
-reducer.dispatch(updateHTMLOutput('One'));
-
-console.log(reducer.getState());
 
 class CodeOutput extends React.Component {
   render() {
