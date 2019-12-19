@@ -87,7 +87,7 @@ class PagePreview extends React.Component {
           </div>
         </div>
       );
-      console.log(ReactDOMServer.renderToStaticMarkup(htmlOutput));
+      // console.log(ReactDOMServer.renderToStaticMarkup(htmlOutput));
       return htmlOutput;
     }
   }

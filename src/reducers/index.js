@@ -1,10 +1,19 @@
-import { createStore, combineReducers } from "redux";
-import { reducer as reduxFormReducer } from "redux-form";
-import updateHTMLState from "./updateHTMLOutput";
+import { UPDATE_HTML } from "../actions";
 
-const reducer = combineReducers({
-  form: reduxFormReducer, // mounted under "form"
-  html: updateHTMLState
-});
+const initialState = {
+  html: '',
+}
 
-export default createStore(reducer);
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+      case UPDATE_HTML:
+        return {
+            output: action.output,
+      }
+      default:
+        return state
+    }
+}
+
+export default reducer;
+

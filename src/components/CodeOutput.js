@@ -1,11 +1,8 @@
 import React from "react";
-import reducer from "../reducers";
+// import reducer from "../reducers";
 import { updateHTMLOutput } from "../actions";
 import "../css/CodeOutput.css";
 
-reducer.dispatch(updateHTMLOutput('One'));
-
-console.log(reducer.getState());
 
 class CodeOutput extends React.Component {
   render() {
@@ -29,5 +26,17 @@ class CodeOutput extends React.Component {
     );
   }
 }
+
+// const mapStateToProps = state => {
+//   return {
+//     notes: state.notes
+//   };
+// };
+
+// const mapDispatchToProps = {
+//   removeNote: removeNote
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(AllNotes);
 
 export default CodeOutput;

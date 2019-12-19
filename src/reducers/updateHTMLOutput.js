@@ -1,20 +1,21 @@
-import { updateHTMLOutput } from '../actions';
+// import { updateHTMLOutput } from '../actions';
 
-const initialState = {
-    html: '',
-}
+// const initialState = {
+//     html: '',
+// }
 
-export default function updateHTMLState(state = initialState, action) {
-    switch (action.type) {
-      case updateHTMLOutput:
-        return {
-            html: [
-                ...state.html, {
-                    payload: action.payload
-                }
-            ]
-        }
-      default:
-        return state
-    }
-  }
+// const updateHTMLState = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'UPDATE_HTML':
+//           return [
+//             ...state.html,
+//             {
+//               output: action.output,
+//             }
+//           ]
+//         default:
+//           return state
+//       }
+// }
+
+// export default updateHTMLOutput;

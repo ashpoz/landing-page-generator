@@ -9,14 +9,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {},
-      showCodeOutput: false
+      // form: {},
+      showCodeOutput: false,
+      // html: ''
     };
   }
 
   handleForm = values => {
     this.setState({ form: values });
     console.log(values);
+    console.log(this.state);
   };
 
   handleShow = () => {
@@ -46,22 +48,10 @@ class App extends React.Component {
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-6">
-                <Form onSubmit={this.handleForm, this.handleShow} />
+                <Form onSubmit={this.handleForm} />
               </div>
               <div className="col-md-6" style={{ backgroundColor: "gray" }}>
                 <PagePreview form={this.state.form} />
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="App">
-          <div className="bg-light pt-4 pb-4">
-            <div className="container">
-              <div className="row">
-                <Header />
               </div>
             </div>
           </div>
@@ -70,7 +60,24 @@ class App extends React.Component {
           </div>
         </div>
       );
-    }
+    } 
+    // hide for now
+    // else {
+    //   return (
+    //     <div className="App">
+    //       <div className="bg-light pt-4 pb-4">
+    //         <div className="container">
+    //           <div className="row">
+    //             <Header />
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div className="container">
+    //         <CodeOutput show={this.state.showCodeOutput}/>
+    //       </div>
+    //     </div>
+    //   );
+    // }
   }
 }
 

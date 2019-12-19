@@ -1,15 +1,9 @@
-// action creator
-export const updateField = (field) => {
-    // return an action
-    return {
-        type: 'FIELD_UPDATED',
-        payload: field
-    }
-}
+export const UPDATE_HTML = 'UPDATE_HTML';
 
+// action creator
 export const updateHTMLOutput = (output) => {
     return {
-        type: 'UPDATE_HTML',
-        payload: output
+        type: UPDATE_HTML,
+        output: output
     }
 }
