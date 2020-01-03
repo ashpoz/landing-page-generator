@@ -1,10 +1,17 @@
 import React from "react";
+import { connect } from 'react-redux';
 // import reducer from "../reducers";
 import { updateHTMLOutput } from "../actions";
 import "../css/CodeOutput.css";
 
 
 class CodeOutput extends React.Component {
+
+  updateHTMLOutput = () => {
+    this.props.updateHTMLOutput();
+  }
+  
+
   render() {
     return (
       <div className="codeOutput pt-5 pb-5">
@@ -12,7 +19,7 @@ class CodeOutput extends React.Component {
           <h2>HTML:</h2>
           <div className="htmlOutput__code">
             <div className="toolbar bg-secondary"></div>
-            <pre>{}</pre>
+            <pre>{this.props.html}</pre>
           </div>
         </div>
         <div className="cssOutput mt-5">
@@ -27,16 +34,16 @@ class CodeOutput extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     notes: state.notes
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    output: state.output
+  };
+};
 
 // const mapDispatchToProps = {
 //   removeNote: removeNote
 // };
 
-// export default connect(mapStateToProps, mapDispatchToProps)(AllNotes);
+export default connect(mapStateToProps)(CodeOutput);
 
-export default CodeOutput;
+// export default CodeOutput;

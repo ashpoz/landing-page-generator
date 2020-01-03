@@ -1,24 +1,31 @@
 import React from "react";
+import { connect } from 'react-redux';
+
 import Header from "./Header";
 import Form from "./Form";
 import PagePreview from "./PagePreview";
 import CodeOutput from "./CodeOutput";
+import { updateHTMLOutput } from "../actions";
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // form: {},
       showCodeOutput: false,
-      // html: ''
     };
   }
+
+  updateHTMLOutput = (values) => {
+    this.setState({ html: values })
+  }
+
 
   handleForm = values => {
     this.setState({ form: values });
     console.log(values);
     console.log(this.state);
+    updateHTMLOutput();
   };
 
   handleShow = () => {
@@ -56,7 +63,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="container">
-            <CodeOutput show={this.state.showCodeOutput}/>
+            <CodeOutput show={this.updateHTMLOutput}/>
           </div>
         </div>
       );
@@ -81,4 +88,14 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    output: state.html
+  };
+};
+
+const mapDispatchToProps = {
+  updateHTMLOutput: updateHTMLOutput
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);;

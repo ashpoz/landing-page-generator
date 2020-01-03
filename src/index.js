@@ -15,9 +15,9 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer);
 
-console.log('Before:', store.getState());
-store.dispatch(outputTest('hi'));
-console.log('After:', store.getState());
+// console.log('Before:', store.getState());
+// store.dispatch(outputTest('hi'));
+// console.log('After:', store.getState());
 
 ReactDOM.render(
     <Provider store={store}>
