@@ -17,8 +17,6 @@ class App extends React.Component {
 
   handleForm = values => {
     this.setState({ form: values });
-    console.log(values);
-    console.log(this.state);
   };
 
   handleShow = () => {
@@ -34,7 +32,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.showCodeOutput);
     if (this.state.showCodeOutput === false) {
       return (
         <div className="App">
@@ -56,7 +53,7 @@ class App extends React.Component {
             </div>
           </div>
           <div className="container">
-            <CodeOutput show={this.state.showCodeOutput}/>
+            <CodeOutput html={this.state.html}  />
           </div>
         </div>
       );

@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import '../css/PagePreview.css';
 
-class PagePreview extends React.Component {
+let output; // rendered component html
 
+class PagePreview extends React.Component {
     render() {
       let htmlOutput = (
         <div className="bg-white" style={{ backgroundColor: "white", transform: "scale(0.9)", height: "600px", overflow: "auto" }}>
@@ -88,11 +89,17 @@ class PagePreview extends React.Component {
         </div>
       );
       // console.log(ReactDOMServer.renderToStaticMarkup(htmlOutput));
+      // console.log(this.props);
+      
+
+      output = ReactDOMServer.renderToStaticMarkup(htmlOutput);
+
       return htmlOutput;
     }
   }
 
   const mapStateToProps = state => ({
+    html: state.html.output = output,
     pageTitle: formValueSelector("lpForm")(state, "pageTitle"),
     partnerName: formValueSelector("lpForm")(state, "partnerName"),
     parterLogo: formValueSelector("lpForm")(state, "parterLogo"),
