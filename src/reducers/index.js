@@ -1,7 +1,7 @@
 import { UPDATE_HTML } from "../actions";
 
 const initialState = {
-  html: '',
+  output: '',
 }
 
 const reducer = (state = initialState, action) => {

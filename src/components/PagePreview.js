@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
 import '../css/PagePreview.css';
 
+let output; // rendered component html
+
 class PagePreview extends React.Component {
+
 
     render() {
       let htmlOutput = (
-        <div className="bg-white" style={{ backgroundColor: "white", transform: "scale(0.9)", height: "600px", overflow: "auto" }}>
+        <div className="bg-white">
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -27,13 +30,13 @@ class PagePreview extends React.Component {
                 className="col-12 header__bg"
                 style={{
                   background:
-                    'url("https://edge.spiceworksstatic.com/service.client-interactive/2018/zoho/291441/manageengine-header-291441-dec2018-s.jpg") no-repeat center center / cover'
+                    `url(${this.props.headerImage}) no-repeat center center / cover`
                 }}
               >
                 <div className="row">
                   <div className="col-sm-12 col-md-7 header__title">
                     <img
-                      src="//via.placeholder.com/400x100"
+                      src={this.props.partnerLogo}
                       className="partnerlogo"
                       alt=""
                     />
@@ -56,15 +59,7 @@ class PagePreview extends React.Component {
             </div>
             <div className="row content">
               <div className="col-md-7 content__left">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
-                debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam
-                odio praesentium provident qui repellat rerum sed temporibus ullam
-                voluptatem.
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
-                eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae
-                voluptate voluptatem? Ad autem consequuntur culpa dolorem id
-                labore officia quia recusandae saepe veniam.
+                {this.props.mainContent}
                 <h3>
                   <strong>What you will learn from asset:</strong>
                 </h3>
@@ -78,7 +73,7 @@ class PagePreview extends React.Component {
                 <h2>Download the {this.props.product}</h2>
                 <iframe
                   title="convertr-form"
-                  src="https://spiceworks.cvtr.io/forms/general-lp-template"
+                  src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
                   style={{ width: "100%", height: "600px", overflow: "hidden" }}
                   frameBorder={0}
                 />
@@ -86,19 +81,25 @@ class PagePreview extends React.Component {
             </div>
           </div>
         </div>
-      );
-      // console.log(ReactDOMServer.renderToStaticMarkup(htmlOutput));
+      );  
+          
+      output = ReactDOMServer.renderToStaticMarkup(htmlOutput);
+
       return htmlOutput;
     }
   }
 
   const mapStateToProps = state => ({
+    html: state.html.output = output,
     pageTitle: formValueSelector("lpForm")(state, "pageTitle"),
     partnerName: formValueSelector("lpForm")(state, "partnerName"),
-    parterLogo: formValueSelector("lpForm")(state, "parterLogo"),
+    partnerLogo: formValueSelector("lpForm")(state, "partnerLogo"),
     product: formValueSelector("lpForm")(state, "product"),
     heading: formValueSelector("lpForm")(state, "heading"),
+    headerImage: formValueSelector("lpForm")(state, "headerImage"),
     subheading: formValueSelector("lpForm")(state, "subheading"),
+    mainContent: formValueSelector("lpForm")(state, "mainContent"),
+    convertrIframeSlug: formValueSelector("lpForm")(state, "convertrIframeSlug"),
   })
 
 export default connect(mapStateToProps)(PagePreview);
