@@ -53,10 +53,4 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = {
-//   removeNote: removeNote
-// };
-
 export default connect(mapStateToProps)(CodeOutput);
-
-// export default CodeOutput;

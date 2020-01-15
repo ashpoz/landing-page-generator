@@ -13,10 +13,12 @@ html {
 #pagePreview {
   font-size: 0.5em;
 }
-#pagePreview .bg-white {
+#pagePreview .pagePreview__container {
   transform: scale(0.9);
   height: 600px;
   overflow: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px #000;
 }
 /* #pagePreview .header__bg .row {
   padding: 1.875em;
@@ -63,22 +65,14 @@ html {
 #pagePreview .partnerlogo {
   margin-bottom: 1.875em;
 }
-#pagePreview .custom-select {
-  display: inline-block;
+#pagePreview .placeholderHTML {
   width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem 1.75rem .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  vertical-align: middle;
-  background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' heig…0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  height: 100%;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  padding-top: 15rem;
+  font-size: 4em;
 }
 .partnerlogo {
   width: 150px;

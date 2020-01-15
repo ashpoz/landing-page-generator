@@ -3,7 +3,7 @@ import Header from "./Header";
 import Form from "./Form";
 import PagePreview from "./PagePreview";
 import CodeOutput from "./CodeOutput";
-// import { updateHTMLOutput } from "../actions";
+import "../css/App.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,31 +13,16 @@ class App extends React.Component {
     };
   }
 
-  // updateHTMLOutput = (values) => {
-  //   this.setState({ html: values })
-  // }
-
   handleForm = values => {
+    window.location.hash = '';
+    window.location.hash = 'codeOutput';
     this.setState({ form: values });
   };
 
-  handleShow = () => {
-    this.setState({
-      showCodeOutput: true
-    });
-  };
-
-  handleHide = () => {
-    this.setState({
-      showCodeOutput: false
-    });
-  };
-
   render() {
-    if (this.state.showCodeOutput === false) {
       return (
         <div className="App">
-          <div className="bg-light pt-4 pb-4">
+          <div className="header bg-light pt-4 pb-4">
             <div className="container">
               <div className="row">
                 <Header />
@@ -58,29 +43,12 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container">
+          <div id="codeOutput" className="container">
+            <hr className="mt-5"></hr>
             <CodeOutput html={this.state.html} />
           </div>
         </div>
       );
-    }
-    // hide for now
-    // else {
-    //   return (
-    //     <div className="App">
-    //       <div className="bg-light pt-4 pb-4">
-    //         <div className="container">
-    //           <div className="row">
-    //             <Header />
-    //           </div>
-    //         </div>
-    //       </div>
-    //       <div className="container">
-    //         <CodeOutput show={this.state.showCodeOutput}/>
-    //       </div>
-    //     </div>
-    //   );
-    // }
   }
 }
 
