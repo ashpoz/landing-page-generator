@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { connect } from "react-redux";
 import { formValueSelector } from "redux-form";
-import "../css/PagePreview.css";
+import "./css/PagePreview.css";
 
 let output; // rendered component html
 

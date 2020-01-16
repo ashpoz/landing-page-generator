@@ -3,7 +3,7 @@ import Header from "./Header";
 import Form from "./Form";
 import PagePreview from "./PagePreview";
 import CodeOutput from "./CodeOutput";
-import "../css/App.css";
+import "./css/App.css";
 
 class App extends React.Component {
   constructor(props) {

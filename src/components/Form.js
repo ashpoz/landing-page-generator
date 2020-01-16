@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { reduxForm, Field, FieldArray, formValueSelector } from "redux-form";
-import "../css/Form.css";
+import "./css/Form.css";
 
 class Form extends React.Component {
 

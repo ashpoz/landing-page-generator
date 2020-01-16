@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import Prism from "prismjs";
 import ClipboardJS from "clipboard";
 import { lpStyles } from "../data/lp-styles";
-import "../css/prism.css";
-import "../css/CodeOutput.css";
+import "./css/prism.css";
+import "./css/CodeOutput.css";
 
 class CodeOutput extends React.Component {
 
