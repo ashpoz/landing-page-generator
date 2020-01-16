@@ -39,7 +39,9 @@ class App extends React.Component {
                 className="col-md-6"
                 style={{ backgroundColor: "gray" }}
               >
-                <PagePreview form={this.state.form} />
+                <div className="pagePreview__container position-sticky fixed-top">
+                  <PagePreview form={this.state.form} />
+                </div>
               </div>
             </div>
           </div>

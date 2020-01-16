@@ -33,7 +33,7 @@ class PagePreview extends React.Component {
 
     if (this.props.templateSelect === "singleAssetA") {
       htmlOutput = (
-        <div className="pagePreview__container position-sticky fixed-top">
+        <div>
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
@@ -92,7 +92,7 @@ class PagePreview extends React.Component {
       );
     } else if (this.props.templateSelect === "singleAssetB") {
       htmlOutput = (
-        <div className="pagePreview__container position-sticky fixed-top">
+        <div>
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
@@ -145,7 +145,7 @@ class PagePreview extends React.Component {
       );
     } else if (this.props.templateSelect === "singleAssetC") {
       htmlOutput = (
-        <div className="pagePreview__container position-sticky fixed-top">
+        <div>
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
@@ -201,7 +201,7 @@ class PagePreview extends React.Component {
       );
     } else if (this.props.templateSelect === "toolkit") {
       htmlOutput = (
-        <div className="pagePreview__container position-sticky fixed-top">
+        <div>
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
