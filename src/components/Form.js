@@ -185,7 +185,7 @@ class Form extends React.Component {
             <Field
               className="input form-control"
               name="mainContent"
-              component="input"
+              component="textarea"
               type="text"
               placeholder="Main Content"
             />
