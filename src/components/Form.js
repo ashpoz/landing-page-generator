@@ -36,7 +36,7 @@ class Form extends React.Component {
             className="btn btn-secondary ml-auto"
             onClick={() => fields.push()}
           >
-            Add Bullet Item
+            Add Item
           </button>
         </li>
         {fields.map((bulletItem, index) => (
@@ -235,8 +235,12 @@ class Form extends React.Component {
               placeholder="ConvertrIframeSlug"
             />
           </div>
-          <div className="form-group__subsection">
-            <div className="form-group">
+          <div className="card">
+            <div className="card-header">
+            Bullet List
+            </div>
+          <div className="card-body">
+          <div className="form-group">
               <label htmlFor="bulletListTitle">Bullet List Title:</label>
               <Field
                 className="input form-control"
@@ -250,11 +254,27 @@ class Form extends React.Component {
               <FieldArray name="bulletList" component={bulletList} />
             </div>
           </div>
+          </div>
+          <div className={`card ${displayFields(['toolkitA'])}`}>
+            <div className="card-header">
+              Assets
+            </div>
+            <div className="card-body">
+              <div className="form-group">
+                <FieldArray name="assetList" component={bulletList} />
+              </div>
+            </div>
+          </div>
           <div
-            className={`form-group__subsection ${displayFields(['toolkitB'])}`}
+            className={`card ${displayFields(['toolkitB'])}`}
           >
-            <div className="form-group">
-              <FieldArray name="assets" component={renderAssets} />
+            <div className="card-header">
+              Assets
+            </div>
+            <div className="card-body">
+              <div className="form-group">
+                <FieldArray name="assets" component={renderAssets} />
+              </div>
             </div>
           </div>
           <button type="submit" className="btn btn-primary w-100">
@@ -283,10 +303,23 @@ const initialValues = {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam odio praesentium provident qui repellat rerum sed temporibus ullam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae voluptate voluptatem? Ad autem consequuntur culpa dolorem id labore officia quia recusandae saepe veniam.",
   convertrIframeSlug: "general-lp-template",
   bulletListTitle: "What you'll learn:",
-  bulletList: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
+  bulletList: ["Asset 1 Title Lorem ipsum dolor sit", "Asset 2 Title Lorem ipsum dolor sit", "Asset 3 Title Lorem ipsum dolor sit", "Asset 4 Title Lorem ipsum dolor sit"],
+  assetList: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
   assets: [
     {
       title: "Asset 1",
+      image: "http://placehold.it/100"
+    },
+    {
+      title: "Asset 2",
+      image: "http://placehold.it/100"
+    },
+    {
+      title: "Asset 3",
+      image: "http://placehold.it/100"
+    },
+    {
+      title: "Asset 4",
       image: "http://placehold.it/100"
     }
   ]

@@ -22,13 +22,6 @@
     label {
         font-weight: 700;
     }
-    &__subsection {
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-    }
     @media (min-width: 992px) {
         display: flex;
         align-items: center;
@@ -38,17 +31,11 @@
             padding: 0 1rem;
             text-align: right;
         }
-        // &__subsection {
-        //     label {
-        //         padding: 0;
-        //         margin-bottom: .25rem;
-        //         text-align: left;
-        //     }
-        //     .form-group {
-        //         display: block;
-        //     }
-        // }
     }
+}
+
+.card {
+  margin: 1rem 0;
 }
 
 .custom-select {

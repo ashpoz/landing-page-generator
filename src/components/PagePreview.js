@@ -413,6 +413,7 @@ const mapStateToProps = state => ({
   convertrIframeSlug: formValueSelector("lpForm")(state, "convertrIframeSlug"),
   bulletListTitle: formValueSelector("lpForm")(state, "bulletListTitle"),
   bulletList: formValueSelector("lpForm")(state, "bulletList"),
+  assetList: formValueSelector("lpForm")(state, "assetList"),
   assets: formValueSelector("lpForm")(state, "assets")
 });
 
