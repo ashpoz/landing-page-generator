@@ -266,7 +266,7 @@ class Form extends React.Component {
             </div>
           </div>
           <div
-            className={`card ${displayFields(['toolkitB'])}`}
+            className={`card ${displayFields(['toolkitB', 'toolkitC'])}`}
           >
             <div className="card-header">
               Assets
