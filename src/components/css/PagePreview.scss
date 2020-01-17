@@ -55,7 +55,8 @@ html {
 #pagePreview .partnerlogo {
   margin-bottom: 1.875em;
 }
-#pagePreview .placeholderHTML {
+
+#placeholderHTML {
   width: 100%;
   height: 100%;
   background: #ccc;
@@ -64,6 +65,7 @@ html {
   padding-top: 15rem;
   font-size: 4em;
 }
+
 .partnerlogo {
   width: 150px;
 }
@@ -74,11 +76,11 @@ html {
   background-color: #022735;
 }
 .header__bg p.lead {
-  font-size: 20px;
+  font-size: 1.25em;
   color: #fff;
 }
 .header__color {
-  padding: 75px 40px 50px;
+  padding: 3em 2.5em 2.5em;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -89,36 +91,36 @@ html {
 .header__color-full {
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 6em;
 }
 .header__color-full h1 {
   max-width: 520px;
   text-align: center;
-  font-size: 36px;
+  font-size: 2.25em;
   font-weight: 300;
-  line-height: 49px;
+  line-height: 1.5;
   color: #fff;
   margin-bottom: 15px;
 }
 .header__color-full h2 {
   max-width: 350px;
   text-align: center;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 1.25em;
+  line-height: 1.5;
   font-weight: 300;
   color: #fff;
   margin-top: 0;
 }
 .header__c h1 {
-  font-size: 36px;
+  font-size: 2.25em;
   font-weight: 300;
-  line-height: 49px;
+  line-height: 1.5;
   color: #fff;
   margin-bottom: 25px;
 }
 .header__c h2 {
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 1.25em;
+  line-height: 1.5;
   font-weight: 300;
   color: #fff;
   margin-top: 0;
@@ -126,21 +128,21 @@ html {
 .main__title {
   color: #fff;
   font-weight: 100;
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 2.25em;
+  margin-bottom: 1.5em;
 }
 .main__lead {
-  font-size: 20px;
+  font-size: 1.25em;
   color: #fff;
 }
 .main__form {
-  padding: 30px 50px;
+  padding: 1.5em 2em;
   background-color: #f0f0f0;
 }
 .main__form p {
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 1.5;
   color: #000;
 }
 .header__title {
@@ -151,7 +153,7 @@ html {
   flex-direction: column;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 65px;
+  padding: 2.5em;
   border-bottom-right-radius: 10px;
 }
 .header__title h2,
@@ -161,7 +163,7 @@ html {
 .header__title h2 {
   color: #fff;
   font-weight: 100;
-  font-size: 36px;
+  font-size: 2.25em;
 }
 .color--hp {
   color: #405662 !important;
@@ -184,10 +186,10 @@ html {
 }
 .content__copy,
 .content__left {
-  padding: 20px 60px;
-  line-height: 25px;
+  padding: 1.5em 2.5em;
+  line-height: 1.5;
   color: #000;
-  font-size: 16px;
+  font-size: 1em;
 }
 @media (max-width: 991px) {
   .content__copy,
@@ -205,22 +207,22 @@ html {
 }
 .content__copy h4,
 .content__left h4 {
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
-  margin-top: 46px;
+  margin-top: 2.5em;
 }
 .content__copy ul,
 .content__left ul {
   margin-top: 15px;
-  margin-bottom: 45px;
-  padding-left: 40px;
+  margin-bottom: 2.5em;
+  padding-left: 2.5rem;
 }
 .content__copy li,
 .content__left li {
   position: relative;
   list-style-type: none;
-  margin-bottom: 25px;
-  font-size: 14px;
+  margin-bottom: 1.5em;
+  font-size: 0.875em;
 }
 .content__copy ul.regular li,
 .content__left ul.regular li {
@@ -233,9 +235,9 @@ html {
 .content__copy ol > li,
 .content__left ol > li {
   list-style-type: decimal;
-  margin-bottom: 10px;
-  margin-left: 15px;
-  font-size: 16px;
+  margin-bottom: .8em;
+  margin-left: 1em;
+  font-size: 1em;
 }
 .content__copy ul > li:before,
 .content__left ul > li:before {
@@ -256,7 +258,7 @@ html {
   color: #00a5d3;
 }
 .logo-partnerex {
-  margin-top: 25px;
+  margin-top: 1.5em;
   max-width: 250px;
 }
 .content__asset {
@@ -273,19 +275,19 @@ html {
 }
 .content__right {
   border: 1px solid #e9e9e9;
-  padding: 15px 25px;
+  padding: 1em 1.5em;
   background-color: #eee;
   text-align: center;
 }
 .content__right h2 {
   color: #000;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1em;
 }
 .content__right p.lead {
-  margin-top: 25px;
+  margin-top: 1.5em;
   color: #666;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 .asset--multi {
   max-width: 1200px;
@@ -306,24 +308,24 @@ html {
 }
 .asset--multi header h1 {
   max-width: 700px;
-  font-size: 60px;
+  font-size: 3.75em;
   font-weight: 500;
-  line-height: 80px;
+  line-height: 1.5;
   color: #fff !important;
-  margin: 10px 0 0;
+  margin: .625em 0 0;
 }
 .asset--multi header h2 {
   max-width: 610px;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
-  line-height: 36px;
+  line-height: 1.5;
   color: #fff !important;
   margin-left: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
 }
 .asset--multi header h3 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 1.875em;
+  line-height: 1.5;
   font-weight: 500;
   color: #fff !important;
   max-width: 600px;
@@ -344,7 +346,7 @@ html {
   position: relative;
 }
 .asset--multi nav .nav--item {
-  padding: 20px 40px;
+  padding: 1.25em 2.5em;
   text-align: center;
   transition: background-color 0.3s;
   font-size: 18px;
@@ -360,7 +362,7 @@ html {
   background-color: #0483c7;
 }
 .asset--multi-heading h2 {
-  font-size: 26px;
+  font-size: 1.625em;
   font-weight: 300;
   line-height: 36px;
   color: #000;
@@ -397,14 +399,14 @@ html {
   height: auto;
 }
 .asset--multi-asset h4 {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
   line-height: 31px;
   min-height: 62px;
   margin-bottom: 5px;
 }
 .asset--multi-asset p {
-  font-size: 14px;
+  font-size: 0.875em;
   line-height: 20px;
   margin: 15px 0;
   min-height: 60px;
@@ -433,16 +435,22 @@ html {
   background-color: #0483c7;
   color: #fff;
   font-family: Open Sans;
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 700;
-  line-height: 19px;
+  line-height: 1.2;
   text-align: center;
   display: block;
-  margin: 60px auto 40px;
+  margin: 3em auto 2.5em;
 }
 .asset--multi .button--nav:hover {
   cursor: pointer;
 }
+
+.content__right .asset-list li {
+  text-align: left;
+  padding-left: .5rem;
+}
+
 .vidyard_wrapper {
   float: none !important;
 }
@@ -453,17 +461,17 @@ html {
   background-color: #f0f0f0;
 }
 .form-wrap h3 {
-  margin: 20px 0;
+  margin: 1.5em 0;
   color: #002539;
   font-family: Open Sans;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 1.5;
   text-align: center;
 }
 .page--3 h1 {
-  font-size: 36px;
-  line-height: 49px;
+  font-size: 2.25em;
+  line-height: 1.5;
   margin: 120px 0 30px;
 }
 .page--3 h1,
@@ -473,19 +481,19 @@ html {
   font-weight: 300;
 }
 .page--3 h2 {
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 1.25em;
+  line-height: 1.5;
 }
 .page--3 ul {
-  margin-top: 15px;
-  margin-bottom: 45px;
-  padding-left: 40px;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+  padding-left: 2.5rem;
 }
 .page--3 li {
   position: relative;
   list-style-type: none;
-  margin-bottom: 25px;
-  font-size: 14px;
+  margin-bottom: 1.5em;
+  font-size: 0.875em;
 }
 .page--3 ul.regular li {
   list-style-type: disc;
@@ -506,21 +514,21 @@ html {
   transform: rotate(45deg);
 }
 .page--3 .header-row > div {
-  padding: 20px 45px;
+  padding: 1.5em 2.5em;
   min-height: 500px;
   background-color: #eee;
 }
 .page--3 .content {
-  padding: 30px 0;
+  padding: 1.5em 0;
 }
 .page--3 .assets p {
   color: #000;
   font-family: Open Sans;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875em;
+  line-height: 1.5;
   text-align: center;
   max-width: 175px;
-  margin: 20px auto;
+  margin: 1.5em auto;
 }
 .page--3 .assets img {
   width: 100%;
@@ -533,15 +541,15 @@ html {
 .page--3 .copy p {
   color: #000;
   font-family: Open Sans;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: 1em;
+  line-height: 1.5;
 }
 .page--3 .copy p {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 1.5em;
 }
 .asset-grid {
-  padding: 35px 60px;
+  padding: 2.5em 3em;
 }
 .asset-grid img {
   width: 225px;
@@ -549,8 +557,8 @@ html {
 }
 .asset-grid p {
   text-align: center;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875em;
+  line-height: 1.5;
   color: #000;
 }
 .toolkit-iframe__height {
@@ -594,6 +602,6 @@ html {
 }
 @media (max-width: 767px) {
   .content__asset {
-    padding-top: 50px;
+    padding-top: 2.5em;
   }
 }

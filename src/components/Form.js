@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { reduxForm, Field, FieldArray, formValueSelector } from "redux-form";
-import "./css/Form.css";
+import "./css/Form.scss";
 
 class Form extends React.Component {
 
@@ -20,11 +20,11 @@ class Form extends React.Component {
       </div>
     );
 
-    const displayFields = () => {
-      if (this.props.templateSelect === "toolkit") {
-        return "block";
+    const displayFields = (templateArr) => {
+      if (!templateArr.includes(this.props.templateSelect)) {
+        return "d-none";
       } else {
-        return "none";
+        return "";
       }
     };
 
@@ -33,7 +33,7 @@ class Form extends React.Component {
         <li>
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary ml-auto"
             onClick={() => fields.push()}
           >
             Add Bullet Item
@@ -41,6 +41,7 @@ class Form extends React.Component {
         </li>
         {fields.map((bulletItem, index) => (
           <li key={index}>
+            <span className="bullet-list__number">{index + 1}</span>
             <Field
               name={bulletItem}
               type="text"
@@ -63,11 +64,12 @@ class Form extends React.Component {
     );
 
     const renderAssets = ({ fields, meta: { error } }) => (
+      
       <ul className="dynamic-form assets-list">
         <li>
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-secondary ml-auto"
             onClick={() => fields.push()}
           >
             Add Asset
@@ -75,6 +77,7 @@ class Form extends React.Component {
         </li>
         {fields.map((asset, index) => (
           <li key={index}>
+            <span className="bullet-list__number">{index + 1}</span>
             <div className="dynamic-form__fields--container">
               <Field
                 name={`${asset}.title`}
@@ -112,7 +115,7 @@ class Form extends React.Component {
           <h3 className="pb-2">1) Select a template:</h3>
           <div className="form-group">
             <label htmlFor="templateSelect">Template Select:</label>
-            <div>
+            <div className="w-100">
               <Field
                 className="custom-select"
                 name="templateSelect"
@@ -122,7 +125,9 @@ class Form extends React.Component {
                 <option value="singleAssetA">Single Asset Template A</option>
                 <option value="singleAssetB">Single Asset Template B</option>
                 <option value="singleAssetC">Single Asset Template C</option>
-                <option value="toolkit">Toolkit</option>
+                <option value="toolkitA">Toolkit A</option>
+                <option value="toolkitB">Toolkit B</option>
+                <option value="toolkitC">Toolkit C</option>
               </Field>
             </div>
           </div>
@@ -138,6 +143,16 @@ class Form extends React.Component {
               component="input"
               type="text"
               placeholder="Partner Name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="partnerName">OLI:</label>
+            <Field
+              className="input form-control"
+              name="OLI"
+              component="input"
+              type="number"
+              placeholder="OLI"
             />
           </div>
           <div className="form-group">
@@ -178,6 +193,16 @@ class Form extends React.Component {
               component="input"
               type="text"
               placeholder="Subheading"
+            />
+          </div>
+          <div className={`form-group ${displayFields(['toolkitA', 'singleAssetA'])}`}>
+            <label htmlFor="assetThumb">Asset Thumbnail:</label>
+            <Field
+              className="input form-control"
+              name="assetThumb"
+              component="input"
+              type="text"
+              placeholder="Asset Thumbnail"
             />
           </div>
           <div className="form-group">
@@ -226,11 +251,9 @@ class Form extends React.Component {
             </div>
           </div>
           <div
-            className="form-group__subsection"
-            style={{ display: displayFields() }}
+            className={`form-group__subsection ${displayFields(['toolkitB'])}`}
           >
             <div className="form-group">
-              <label htmlFor="assets">Assets:</label>
               <FieldArray name="assets" component={renderAssets} />
             </div>
           </div>
@@ -245,14 +268,17 @@ class Form extends React.Component {
 
 const initialValues = {
   partnerName: "[PARTNER]",
+  OLI: "000000",
   templateSelect: "",
   partnerLogo: "http://placehold.it/100x25",
-  product: "",
+  product: "[PRODUCT]",
   heading: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   headerImage:
     "https://edge.spiceworksstatic.com/service.client-interactive/2018/zoho/291441/manageengine-header-291441-dec2018-s.jpg",
   subheading:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at commodi...",
+  assetThumb:
+    "http://placehold.it/300",
   mainContent:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam odio praesentium provident qui repellat rerum sed temporibus ullam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae voluptate voluptatem? Ad autem consequuntur culpa dolorem id labore officia quia recusandae saepe veniam.",
   convertrIframeSlug: "general-lp-template",
