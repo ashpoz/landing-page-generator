@@ -195,7 +195,7 @@ class Form extends React.Component {
               placeholder="Subheading"
             />
           </div>
-          <div className={`form-group ${displayFields(['toolkitA', 'singleAssetA'])}`}>
+          <div className={`form-group ${displayFields(['toolkitA', 'singleAssetA', 'singleAssetB', 'singleAssetC'])}`}>
             <label htmlFor="assetThumb">Asset Thumbnail:</label>
             <Field
               className="input form-control"

@@ -146,7 +146,7 @@ class PagePreview extends React.Component {
               </div>
               <div className="col-12 col-md-6">
                 <img
-                  src="//via.placeholder.com/360x460"
+                  src={this.props.assetThumb}
                   alt=""
                   className="asset--img"
                 />
@@ -200,7 +200,7 @@ class PagePreview extends React.Component {
             <div className="row content">
               <div className="col-12 col-md-6">
                 <img
-                  src="//via.placeholder.com/360x460"
+                  src={this.props.assetThumb}
                   alt=""
                   className="asset--img"
                 />
