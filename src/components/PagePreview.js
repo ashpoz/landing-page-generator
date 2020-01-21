@@ -262,12 +262,7 @@ class PagePreview extends React.Component {
               <h2>
                 Download your {this.props.product}
               </h2>
-              <ul className="asset-list">
-                <li>Asset 1 Title Lorem Ipsum Dolor Sit</li>
-                <li>Asset 2 Title Lorem Ipsum Dolor Sit</li>
-                <li>Asset 3 Title Lorem Ipsum Dolor Sit</li>
-                <li>Asset 4 Title Lorem Ipsum Dolor Sit</li>
-              </ul>
+              <ul className="asset-list">{displayBulletList(this.props.assetList)}</ul>
               <iframe title="convertr-form" src="https://spiceworks.cvtr.io/forms/general-lp-template" style={{width: '100%', height: '600px', overflow: 'hidden'}} frameBorder={0} />
             </div>
           </div>

@@ -303,8 +303,8 @@ const initialValues = {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam odio praesentium provident qui repellat rerum sed temporibus ullam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae voluptate voluptatem? Ad autem consequuntur culpa dolorem id labore officia quia recusandae saepe veniam.",
   convertrIframeSlug: "general-lp-template",
   bulletListTitle: "What you'll learn:",
-  bulletList: ["Asset 1 Title Lorem ipsum dolor sit", "Asset 2 Title Lorem ipsum dolor sit", "Asset 3 Title Lorem ipsum dolor sit", "Asset 4 Title Lorem ipsum dolor sit"],
-  assetList: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
+  bulletList: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit"],
+  assetList: ["Asset  1 Title Lorem ipsum dolor sit", "Asset  1 Title Lorem ipsum dolor sit", "Asset  1 Title Lorem ipsum dolor sit"],
   assets: [
     {
       title: "Asset 1",
