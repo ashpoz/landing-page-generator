@@ -119,7 +119,7 @@ class PagePreview extends React.Component {
                 style={{ background: "#1f94ff" }}
               >
                 <img
-                  src="//via.placeholder.com/185x50"
+                  src={this.props.partnerLogo}
                   alt=""
                   className="partnerlogo"
                   style={{ marginBottom: "20px" }}
@@ -177,7 +177,7 @@ class PagePreview extends React.Component {
                 style={{ background: "#1f94ff", paddingTop: "30px" }}
               >
                 <img
-                  src="//via.placeholder.com/185x50"
+                  src={this.props.partnerLogo}
                   alt=""
                   className="partnerlogo"
                   style={{ marginBottom: "30px" }}
@@ -236,7 +236,7 @@ class PagePreview extends React.Component {
             <div className="col-12 header__bg" style={{background: `url(${this.props.headerImage}) no-repeat center center / cover`}}>
               <div className="row">
                 <div className="col-sm-12 col-md-7 header__title">
-                  <img src="//via.placeholder.com/400x100" className="partnerlogo" alt="" />
+                  <img src={this.props.partnerLogo} className="partnerlogo" alt="" />
                   <h2>
                     {this.props.heading}
                   </h2>
@@ -294,7 +294,7 @@ class PagePreview extends React.Component {
               }}
             >
               <img
-                src="https://edge.spiceworksstatic.com/service.client-interactive/2018/DandHDistributing/294897/Microsoft-logo-white.png"
+                src={this.props.partnerLogo}
                 alt=""
                 className="partnerlogo"
               />
@@ -341,7 +341,7 @@ class PagePreview extends React.Component {
         <div className="container" style={{border: '1px solid #D2D2D2'}}>
           <div className="row">
             <div className="col-12 col-md-6 header__color header__c" style={{backgroundImage: `url(${this.props.headerImage})`}}>
-              <img src="https://placehold.it/400x100" alt="" className="partnerlogo" />
+              <img src={this.props.partnerLogo} alt="" className="partnerlogo" />
               <h1 className="main__title" style={{paddingTop: '1.5rem', marginBottom: '.5rem'}}>
                 {this.props.heading}
               </h1>
