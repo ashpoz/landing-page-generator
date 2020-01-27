@@ -191,7 +191,7 @@ class PagePreview extends React.Component {
               >
                 <iframe
                   title="convertr-form"
-                  src="https://spiceworks.cvtr.io/forms/general-lp-template"
+                  src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
                   style={{ width: "100%", height: "600px", overflow: "hidden" }}
                   frameBorder={0}
                 />
@@ -263,7 +263,7 @@ class PagePreview extends React.Component {
                 Download your {this.props.product}
               </h2>
               <ul className="asset-list">{displayBulletList(this.props.assetList)}</ul>
-              <iframe title="convertr-form" src="https://spiceworks.cvtr.io/forms/general-lp-template" style={{width: '100%', height: '600px', overflow: 'hidden'}} frameBorder={0} />
+              <iframe title="convertr-form" src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`} style={{width: '100%', height: '600px', overflow: 'hidden'}} frameBorder={0} />
             </div>
           </div>
         </div>
@@ -305,7 +305,7 @@ class PagePreview extends React.Component {
               <h3>Download your {this.props.product}:</h3>
               <iframe
                 title="convertr-form"
-                src="https://spiceworks.cvtr.io/forms/d-h-distributing"
+                src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
                 style={{ width: "100%", height: "380px", overflow: "hidden" }}
                 frameBorder={0}
               />
@@ -353,7 +353,7 @@ class PagePreview extends React.Component {
               <p style={{marginLeft: '30px'}}>
                 Download your {this.props.product}:
               </p>
-              <iframe title="convertr-form-2" src="https://spiceworks.cvtr.io/forms/cisco-toolkit-landing-page" style={{width: '100%', height: '605px', overflow: 'hidden'}} frameBorder={0} />
+              <iframe title="convertr-form-2" src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`} style={{width: '100%', height: '605px', overflow: 'hidden'}} frameBorder={0} />
             </div>
           </div>
           <div className="row content">
