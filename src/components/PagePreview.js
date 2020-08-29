@@ -11,7 +11,7 @@ class PagePreview extends React.Component {
   render() {
     // init vars
     let htmlOutput = <div className="placeholderHTML">[SELECT A TEMPLATE]</div>;
-    let OLI = '000000'; 
+    let OLI = '000000';
     let partnerName = '[PARTNER]';
 
     const displayBulletList = list => {
@@ -34,242 +34,334 @@ class PagePreview extends React.Component {
       });
     };
 
-    if (this.props.templateSelect === "singleAssetA") {
+    if (this.props.templateSelect === "bare") {
       // GA vars
       partnerName = this.props.partnerName;
       OLI = this.props.OLI;
 
       htmlOutput = (
-        <div id={this.props.templateSelect}>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
-          />
-          <p style={{ textAlign: "center", margin: "15px 0 15px 0" }}>
-            Content brought to you by {this.props.partnerName}
-          </p>
+        <>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div className="container">
+              <a className="navbar-brand" href="#">Start Bootstrap</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item active">
+                    <a className="nav-link" href="#">Home
+                    <span className="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Services</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
           <div className="container">
             <div className="row">
-              <div
-                className="col-12 header__bg"
-                style={{
-                  background: `url(${this.props.headerImage}) no-repeat center center / cover`
-                }}
-              >
-                <div className="row">
-                  <div className="col-sm-12 col-md-7 header__title">
-                    <img
-                      src={this.props.partnerLogo}
-                      className="partnerlogo"
-                      alt=""
-                    />
-                    <h2>{this.props.heading}</h2>
-                    <p className="lead">{this.props.subheading}</p>
+              <div className="col-lg-12 text-center">
+                <h1 className="mt-5">{this.props.heading}</h1>
+                <p className="lead">{this.props.subheading}</p>
+                <p className="main-content">{this.props.mainContent}</p>
+              </div>
+            </div>
+          </div>
+          <script src="vendor/jquery/jquery.slim.min.js"></script>
+          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        </>
+      );
+    } else if (this.props.templateSelect === "business") {
+
+      // GA vars
+      partnerName = this.props.partnerName;
+      OLI = this.props.OLI;
+
+      htmlOutput = (
+
+        <div id={this.props.templateSelect}>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div className="container">
+              <a className="navbar-brand" href="#">Start Bootstrap</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item active">
+                    <a className="nav-link" href="#">Home
+                    <span className="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Services</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <header className="bg-primary py-5 mb-5">
+            <div className="container h-100">
+              <div className="row h-100 align-items-center">
+                <div className="col-lg-12">
+                  <h1 className="display-4 text-white mt-5 mb-2">Business Name or Tagline</h1>
+                  <p className="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 mb-5">
+                <h2>What We Do</h2>
+                <hr />
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
+                <a className="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+              </div>
+              <div className="col-md-4 mb-5">
+                <h2>Contact Us</h2>
+                <hr />
+                <div>
+                  <strong>Start Bootstrap</strong>
+                  <br />3481 Melrose Place
+                  <br />Beverly Hills, CA 90210
+                  <br />
+                </div>
+                <div>
+                  <abbr title="Phone">P:</abbr>
+                    (123) 456-7890
+                    <br />
+                  <abbr title="Email">E:</abbr>
+                  <a href="mailto:#">name@example.com</a>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-md-4 mb-5">
+                <div className="card h-100">
+                  <img className="card-img-top" src="https://placehold.it/300x200" alt="" />
+                  <div className="card-body">
+                    <h4 className="card-title">Card title</h4>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
                   </div>
-                  <div className="col-md-5  header__assetimg-wrap">
-                    <img
-                      src={this.props.assetThumb}
-                      alt=""
-                      className="assetthumb"
-                    />
+                  <div className="card-footer">
+                    <a href="#" className="btn btn-primary">Find Out More!</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 mb-5">
+                <div className="card h-100">
+                  <img className="card-img-top" src="https://placehold.it/300x200" alt="" />
+                  <div className="card-body">
+                    <h4 className="card-title">Card title</h4>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+                  </div>
+                  <div className="card-footer">
+                    <a href="#" className="btn btn-primary">Find Out More!</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 mb-5">
+                <div className="card h-100">
+                  <img className="card-img-top" src="https://placehold.it/300x200" alt="" />
+                  <div className="card-body">
+                    <h4 className="card-title">Card title</h4>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                  </div>
+                  <div className="card-footer">
+                    <a href="#" className="btn btn-primary">Find Out More!</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="row content">
-              <div className="col-md-7 content__left">
-                {this.props.mainContent}
-                <h3>
-                  <strong>{this.props.bulletListTitle}</strong>
-                </h3>
-                <ul>{displayBulletList(this.props.bulletList)}</ul>
-              </div>
-              <div className="col-md-5 content__right">
-                <h2>Download the {this.props.product}</h2>
-                <iframe
-                  title="convertr-form"
-                  src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
-                  style={{ width: "100%", height: "600px", overflow: "hidden" }}
-                  frameBorder={0}
-                />
-              </div>
-            </div>
           </div>
+
+          <footer className="py-5 bg-dark">
+            <div className="container">
+              <p className="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
+          </footer>
         </div>
       );
-    } else if (this.props.templateSelect === "singleAssetB") {
-
-      // GA vars
-      partnerName = this.props.partnerName;
-      OLI = this.props.OLI;
-      
-      htmlOutput = (
-        <div id={this.props.templateSelect}>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
-          />
-          <p style={{ textAlign: "center", margin: "15px 0 15px 0" }}>
-            Content brought to you by {this.props.partnerName}
-          </p>
-          <div className="container">
-            <div className="row">
-              <div
-                className="col-12 header__color header__color-full"
-                style={{ background: "#1f94ff" }}
-              >
-                <img
-                  src={this.props.partnerLogo}
-                  alt=""
-                  className="partnerlogo"
-                  style={{ marginBottom: "20px" }}
-                />
-                <h1>{this.props.heading}</h1>
-                <h2>{this.props.subheading}</h2>
-              </div>
-              <div className="col-12" style={{ padding: 0 }}>
-                <iframe
-                  title="convertr-form-1"
-                  src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
-                  style={{ width: "100%", height: "600px", overflow: "hidden" }}
-                  frameBorder={0}
-                />
-              </div>
-            </div>
-            <div className="row content content__copy">
-              <div className="col-12 col-md-6">
-                <p>{this.props.mainContent}</p>
-                <h3>
-                  <strong>{this.props.bulletListTitle}</strong>
-                </h3>
-                <ul>{displayBulletList(this.props.bulletList)}</ul>
-              </div>
-              <div className="col-12 col-md-6">
-                <img
-                  src={this.props.assetThumb}
-                  alt=""
-                  className="asset--img"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    } else if (this.props.templateSelect === "singleAssetC") {
-
-        // GA vars
-        partnerName = this.props.partnerName;
-        OLI = this.props.OLI;
-
-        htmlOutput = (
-        <div id={this.props.templateSelect}>
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
-          />
-          <p style={{ textAlign: "center", margin: "15px 0 15px 0" }}>
-            Content brought to you by {this.props.partnerName}
-          </p>
-          <div className="container">
-            <div className="row">
-              <div
-                className="col-12 col-md-6 header__color header__c"
-                style={{ background: "#1f94ff", paddingTop: "30px" }}
-              >
-                <img
-                  src={this.props.partnerLogo}
-                  alt=""
-                  className="partnerlogo"
-                  style={{ marginBottom: "30px" }}
-                />
-                <h1>{this.props.heading}</h1>
-                <h2>{this.props.subheading}</h2>
-              </div>
-              <div
-                className="col-12 col-md-6"
-                style={{ paddingLeft: 0, background: "#f0f0f0" }}
-              >
-                <iframe
-                  title="convertr-form"
-                  src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
-                  style={{ width: "100%", height: "600px", overflow: "hidden" }}
-                  frameBorder={0}
-                />
-              </div>
-            </div>
-            <div className="row content">
-              <div className="col-12 col-md-6">
-                <img
-                  src={this.props.assetThumb}
-                  alt=""
-                  className="asset--img"
-                />
-              </div>
-              <div className="col-12 col-md-6 content__copy">
-                <p>{this.props.mainContent}</p>
-                <h3>
-                  <strong>{this.props.bulletListTitle}</strong>
-                </h3>
-                <ul>{displayBulletList(this.props.bulletList)}</ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    } else if (this.props.templateSelect === "toolkitA") {
+    } else if (this.props.templateSelect === "full-width") {
 
       // GA vars
       partnerName = this.props.partnerName;
       OLI = this.props.OLI;
 
       htmlOutput = (
-      <div>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
-        />
-        <p style={{textAlign: 'center', margin: '15px 0 15px 0'}}>
-          Content brought to you by {this.props.partnerName}
-        </p>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 header__bg" style={{background: `url(${this.props.headerImage}) no-repeat center center / cover`}}>
+        <div id={this.props.templateSelect}>
+
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div className="container">
+              <a className="navbar-brand" href="#">Start Bootstrap</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item active">
+                    <a className="nav-link" href="#">Home
+            <span className="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Services</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <header className="py-5 bg-image-full" style={{ backgroundImage: "url('https://unsplash.it/1900/1080?image=1076')" }}>
+            <div style={{ height: "200px" }}></div>
+            {/* <img className="img-fluid d-block mx-auto" src="http://placehold.it/200x200&text=Logo" style={{ height: "300px" }}alt=""/> */}
+          </header>
+
+          <section className="py-5">
+            <div className="container">
+              <h1>Section Heading</h1>
+              <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+            </div>
+          </section>
+
+          <div className="py-5 bg-image-full" style={{ backgroundImage: "url('https://unsplash.it/1900/1080?image=1081')" }}>
+            <div style={{ height: "200px" }}></div>
+          </div>
+
+          <section className="py-5">
+            <div className="container">
+              <h1>Section Heading</h1>
+              <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+            </div>
+          </section>
+
+          <footer className="py-5 bg-dark">
+            <div className="container">
+              <p className="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
+          </footer>
+
+
+        </div>
+      );
+    } else if (this.props.templateSelect === "scrolling-nav") {
+
+      // GA vars
+      partnerName = this.props.partnerName;
+      OLI = this.props.OLI;
+
+      htmlOutput = (
+        <div id={this.props.templateSelect}>
+
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+            <div className="container">
+              <a className="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item">
+                    <a className="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link js-scroll-trigger" href="#services">Services</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <header className="bg-primary text-white">
+            <div className="container text-center">
+              <h1>Welcome to Scrolling Nav</h1>
+              <p className="lead">A landing page template freshly redesigned for Bootstrap 4</p>
+            </div>
+          </header>
+
+          <section id="about">
+            <div className="container">
               <div className="row">
-                <div className="col-sm-12 col-md-7 header__title">
-                  <img src={this.props.partnerLogo} className="partnerlogo" alt="" />
-                  <h2>
-                    {this.props.heading}
-                  </h2>
-                  <p className="lead">
-                  {this.props.subheading}
-                  </p>
-                </div>
-                <div className="col-md-5  header__assetimg-wrap">
-                  <img src={this.props.assetThumb} alt="" className="assetthumb" />
+                <div className="col-lg-8 mx-auto">
+                  <h2>About this page</h2>
+                  <p className="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+                  <ul>
+                    <li>Clickable nav links that smooth scroll to page sections</li>
+                    <li>Responsive behavior when clicking nav links perfect for a one page website</li>
+                    <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
+                    <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="row content">
-            <div className="col-md-7 content__left">
-              {this.props.mainContent}
-              <h3>
-                  <strong>{this.props.bulletListTitle}</strong>
-                </h3>
-              <ul>{displayBulletList(this.props.bulletList)}</ul>
+          </section>
+
+          <section id="services" className="bg-light">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-8 mx-auto">
+                  <h2>Services we offer</h2>
+                  <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                </div>
+              </div>
             </div>
-            <div className="col-md-5 content__right">
-              <h2>
-                Download your {this.props.product}
-              </h2>
-              <ul className="asset-list">{displayBulletList(this.props.assetList)}</ul>
-              <iframe title="convertr-form" src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`} style={{width: '100%', height: '600px', overflow: 'hidden'}} frameBorder={0} />
+          </section>
+
+          <section id="contact">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-8 mx-auto">
+                  <h2>Contact us</h2>
+                  <p className="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
+
+          <footer className="py-5 bg-dark">
+            <div className="container">
+              <p className="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
+          </footer>
+
+
+          <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+          <script src="js/scrolling-nav.js"></script>
+
         </div>
-      </div>
       );
-    } else if (this.props.templateSelect === "toolkitB") {
+    } else if (this.props.templateSelect === "full-screen") {
 
       // GA vars
       partnerName = this.props.partnerName;
@@ -277,102 +369,50 @@ class PagePreview extends React.Component {
 
       htmlOutput = htmlOutput = (
         <div id={this.props.templateSelect}>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css"
-        />
-        <p style={{ textAlign: "center", margin: "15px 0 15px 0" }}>
-          Content brought to you by {this.props.partnerName}
-        </p>
-        <div className="container">
-          <div className="row">
-            <div
-              className="col-12 header__color header__color-full"
-              style={{
-                background:
-                  `url(${this.props.headerImage}) no-repeat center center / cover`
-              }}
-            >
-              <img
-                src={this.props.partnerLogo}
-                alt=""
-                className="partnerlogo"
-              />
-              <h1>{this.props.heading}</h1>
-              <h2>{this.props.subheading}</h2>
+
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div className="container">
+              <a className="navbar-brand" href="#">Start Bootstrap</a>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item active">
+                    <a className="nav-link" href="#">Home
+            <span className="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">About</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Services</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="col-12 form-wrap" style={{ padding: 0 }}>
-              <h3>Download your {this.props.product}:</h3>
-              <iframe
-                title="convertr-form"
-                src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`}
-                style={{ width: "100%", height: "380px", overflow: "hidden" }}
-                frameBorder={0}
-              />
+          </nav>
+
+          <section>
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-6">
+                  <h1 className="mt-5">The Big Picture</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rerum eveniet sapiente repellat esse, doloremque quod recusandae deleniti nostrum assumenda vel beatae sed aut modi nesciunt porro quisquam voluptatem.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="row content">
-            <div className="col-12 col-md-6 content__copy">
-              <p>{this.props.mainContent}</p>
-              <h3>
-                <strong>{this.props.bulletListTitle}</strong>
-              </h3>
-              <ul>{displayBulletList(this.props.bulletList)}</ul>
-            </div>
-            <div className="col-12 col-md-6 container-fluid asset-grid">
-              <div className="row">{displayAssetList(this.props.assets)}</div>
-            </div>
-          </div>
+          </section>
+
+
+
+
         </div>
-      </div>
       );
-    } else if (this.props.templateSelect === "toolkitC") {
-
-      // GA vars
-      partnerName = this.props.partnerName;
-      OLI = this.props.OLI;
-
-      htmlOutput = htmlOutput = (
-        <div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap-grid.min.css" />
-        <p style={{textAlign: 'center', margin: '15px 0 15px 0'}}>
-          Content brought to you by {this.props.partnerName}
-        </p>
-        <div className="container" style={{border: '1px solid #D2D2D2'}}>
-          <div className="row">
-            <div className="col-12 col-md-6 header__color header__c" style={{backgroundImage: `url(${this.props.headerImage})`}}>
-              <img src={this.props.partnerLogo} alt="" className="partnerlogo" />
-              <h1 className="main__title" style={{paddingTop: '1.5rem', marginBottom: '.5rem'}}>
-                {this.props.heading}
-              </h1>
-              <h2 className="main__lead" style={{fontWeight: 'normal', lineHeight: '30px'}}>
-                {this.props.subheading}
-              </h2>
-            </div>
-            <div className="col-12 col-md-6 main__form" style={{padding: '50px 15px'}}>
-              <p style={{marginLeft: '30px'}}>
-                Download your {this.props.product}:
-              </p>
-              <iframe title="convertr-form-2" src={`https://spiceworks.cvtr.io/forms/${this.props.convertrIframeSlug}`} style={{width: '100%', height: '605px', overflow: 'hidden'}} frameBorder={0} />
-            </div>
-          </div>
-          <div className="row content">
-            <div className="col-12 col-md-6 container-fluid asset-grid">
-              <div className="row">{displayAssetList(this.props.assets)}</div>
-            </div>
-            <div className="col-12 col-md-6 content__copy">
-              <p>
-                {this.props.mainContent}
-              </p>
-              <h3>
-                  <strong>{this.props.bulletListTitle}</strong>
-              </h3>
-              <ul>{displayBulletList(this.props.bulletList)}</ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      );   
     } else {
       htmlOutput = htmlOutput = (
         <div id="placeholderHTML">[SELECT A TEMPLATE]</div>
@@ -380,14 +420,14 @@ class PagePreview extends React.Component {
     }
 
     let gaScript = `<script>function sendAnalyticsEvent(action, label) {
-      ga("send", "event", "Vendor Non-Interactive", action, label);
+                            ga("send", "event", "Vendor Non-Interactive", action, label);
     }
-  
+
     ga("set", "page", "/service.labs/${partnerName}/landingpage/${OLI}/en/sw}");
     ga("send", "pageview");</script>`
 
     output = ReactDOMServer.renderToStaticMarkup(htmlOutput).concat(gaScript);
-    
+
 
     return htmlOutput;
   }

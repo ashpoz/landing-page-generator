@@ -122,12 +122,11 @@ class Form extends React.Component {
                 component="select"
               >
                 <option></option>
-                <option value="singleAssetA">Single Asset Template A</option>
-                <option value="singleAssetB">Single Asset Template B</option>
-                <option value="singleAssetC">Single Asset Template C</option>
-                <option value="toolkitA">Toolkit A</option>
-                <option value="toolkitB">Toolkit B</option>
-                <option value="toolkitC">Toolkit C</option>
+                <option value="bare">Bare Template</option>
+                <option value="business">Business Front Page</option>
+                <option value="full-width">Full Width Template</option>
+                <option value="scrolling-nav">Scrolling Nav Template</option>
+                <option value="full-screen">Full Screen Image Template</option>
               </Field>
             </div>
           </div>
