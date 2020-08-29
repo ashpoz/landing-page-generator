@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
+@import "./variables.scss";
 
 body {
-  color: #54585a;
+  color: #2d3436;
   font-family: "Roboto";
 }
 
 .header {
-  background-image: url("../../images/header.png");
+  background-color: #ddd;
+  // background-image: url("../../images/header.png");
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -24,13 +26,13 @@ body {
 }
 
 .btn-primary {
-  background-color: #ff7f32;
-  border-color: #ff7f32;
+  background-color: $accent;
+  border-color: $accent;
   &:hover,
   &:active,
   &:visited {
-    background-color: #e5722d !important;
-    border-color: #e5722d !important;
+    background-color: $accent-hover !important;
+    border-color: $accent-hover !important;
   }
 }
 

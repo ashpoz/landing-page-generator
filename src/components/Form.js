@@ -6,8 +6,8 @@ import "./css/Form.scss";
 class Form extends React.Component {
 
   render() {
-    const renderField = ({ input, label, type, meta: { touched, error } }) => (
-      <div className="dynamic-form__fields">
+    const renderField = ({ input, label, type, className, meta: { touched, error } }) => (
+      <div className={ `dynamic-form__fields ${className}` }>
         <div>
           <input
             {...input}
@@ -63,9 +63,9 @@ class Form extends React.Component {
       </ul>
     );
 
-    const renderAssets = ({ fields, meta: { error } }) => (
+    const renderCards = ({ fields, meta: { error } }) => (
       
-      <ul className="dynamic-form assets-list">
+      <ul className="dynamic-form cards-list">
         <li>
           <button
             type="button"
@@ -82,22 +82,134 @@ class Form extends React.Component {
               <Field
                 name={`${asset}.title`}
                 type="text"
-                placeholder="Asset Title"
+                placeholder="Card Title"
                 component={renderField}
-                label={`Asset Title #${index + 1}`}
+                label={`Card Title #${index + 1}`}
               />
               <Field
                 name={`${asset}.image`}
                 type="text"
-                placeholder="Asset Image"
+                placeholder="Card Image"
                 component={renderField}
-                label={`Asset Image #${index + 1}`}
+                label={`Card Image #${index + 1}`}
+              />
+              <Field
+                name={`${asset}.link.text`}
+                type="text"
+                placeholder="Card Link Text"
+                component={renderField}
+                label={`Card Link Text #${index + 1}`}
+              />
+              <Field
+                name={`${asset}.link.url`}
+                type="text"
+                placeholder="Card Link URL"
+                component={renderField}
+                label={`Card Link URL #${index + 1}`}
               />
             </div>
             <button
               className="btn btn-danger btn-remove"
               type="button"
-              title="Remove Asset Item"
+              title="Remove Card Item"
+              onClick={() => fields.remove(index)}
+            >
+              &times;
+            </button>
+          </li>
+        ))}
+        {error && <li className="error">{error}</li>}
+      </ul>
+    );
+
+    const renderNavItems = ({ fields, meta: { error } }) => (
+      
+      <ul className="dynamic-form cards-list">
+        <li>
+          <button
+            type="button"
+            className="btn btn-secondary ml-auto"
+            onClick={() => fields.push()}
+          >
+            Add Nav Item
+          </button>
+        </li>
+        {fields.map((item, index) => (
+          <li key={index}>
+            <span className="bullet-list__number">{index + 1}</span>
+            <div className="dynamic-form__fields--container">
+            <Field
+                name={`${item}.item`}
+                type="text"
+                placeholder="Nav Item"
+                component={renderField}
+                label={`Nav Item #${index + 1}`}
+              />
+            </div>
+            <button
+              className="btn btn-danger btn-remove"
+              type="button"
+              title="Remove Card Item"
+              onClick={() => fields.remove(index)}
+            >
+              &times;
+            </button>
+          </li>
+        ))}
+        {error && <li className="error">{error}</li>}
+      </ul>
+    );
+
+    const renderSections = ({ fields, meta: { error } }) => (
+      
+      <ul className="dynamic-form cards-list">
+        <li>
+          <button
+            type="button"
+            className="btn btn-secondary ml-auto"
+            onClick={() => fields.push()}
+          >
+            Add Section
+          </button>
+        </li>
+        {fields.map((section, index) => (
+          <li key={index}>
+            <span className="bullet-list__number">{index + 1}</span>
+            <div className="dynamic-form__fields--container">
+            <Field
+                name={`${section}.image`}
+                type="text"
+                placeholder="Section Image"
+                component={renderField}
+                label={`Section Image #${index + 1}`}
+                className={displayFields(['full-width'])}
+              />
+              <Field
+                name={`${section}.heading`}
+                type="text"
+                placeholder="Section Heading"
+                component={renderField}
+                label={`Section Heading #${index + 1}`}
+              />
+              <Field
+                name={`${section}.subheading`}
+                type="text"
+                placeholder="Section Subheading"
+                component={renderField}
+                label={`Section Subheading #${index + 1}`}
+              />
+              <Field
+                name={`${section}.content`}
+                type="text"
+                placeholder="Card Content"
+                component={renderField}
+                label={`Section Content #${index + 1}`}
+              />
+            </div>
+            <button
+              className="btn btn-danger btn-remove"
+              type="button"
+              title="Remove Card Item"
               onClick={() => fields.remove(index)}
             >
               &times;
@@ -121,12 +233,12 @@ class Form extends React.Component {
                 name="templateSelect"
                 component="select"
               >
-                <option></option>
-                <option value="bare">Bare Template</option>
+                <option>-- Select Template --</option>
+                <option value="bare">Bare</option>
                 <option value="business">Business Front Page</option>
-                <option value="full-width">Full Width Template</option>
-                <option value="scrolling-nav">Scrolling Nav Template</option>
-                <option value="full-screen">Full Screen Image Template</option>
+                <option value="full-width">Full Width</option>
+                <option value="scrolling-nav">Scrolling Nav</option>
+                <option value="full-screen">Full Screen Image</option>
               </Field>
             </div>
           </div>
@@ -135,36 +247,16 @@ class Form extends React.Component {
         <div id="step-2">
           <h3 className="pb-2 pt-4">2) Fill in the following fields:</h3>
           <div className="form-group">
-            <label htmlFor="partnerName">Partner Name:</label>
+            <label htmlFor="siteTitle">Site Title:</label>
             <Field
               className="input form-control"
-              name="partnerName"
+              name="siteTitle"
               component="input"
               type="text"
-              placeholder="Partner Name"
+              placeholder="Site Title"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="partnerName">OLI:</label>
-            <Field
-              className="input form-control"
-              name="OLI"
-              component="input"
-              type="number"
-              placeholder="OLI"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="partnerLogo">Partner Logo:</label>
-            <Field
-              className="input form-control"
-              name="partnerLogo"
-              component="input"
-              type="text"
-              placeholder="http://placehold.it/100x200"
-            />
-          </div>
-          <div className="form-group">
+          <div className={`form-group ${displayFields(['full-screen', 'business', 'scrolling-nav'])}`}>
             <label htmlFor="headerImage">Header Image:</label>
             <Field
               className="input form-control"
@@ -184,7 +276,7 @@ class Form extends React.Component {
               placeholder="Heading"
             />
           </div>
-          <div className="form-group">
+          <div className={`form-group ${displayFields(['bare', 'business', 'scrolling-nav'])}`}>
             <label htmlFor="subheading">Subheading:</label>
             <Field
               className="input form-control"
@@ -194,85 +286,163 @@ class Form extends React.Component {
               placeholder="Subheading"
             />
           </div>
-          <div className={`form-group ${displayFields(['toolkitA', 'singleAssetA', 'singleAssetB', 'singleAssetC'])}`}>
-            <label htmlFor="assetThumb">Asset Thumbnail:</label>
+          <div className={`form-group ${displayFields(['business'])}`}>
+            <label htmlFor="bodyHeading">Body Heading:</label>
             <Field
               className="input form-control"
-              name="assetThumb"
+              name="bodyHeading"
               component="input"
               type="text"
-              placeholder="Asset Thumbnail"
+              placeholder="Body Heading"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="mainContent">Main Content:</label>
+          <div className={`form-group ${displayFields(['business', 'bare', 'full-screen'])}`}>
+            <label htmlFor="bodyContent">Body Content:</label>
             <Field
               className="input form-control"
-              name="mainContent"
+              name="bodyContent"
               component="textarea"
               type="text"
-              placeholder="Main Content"
+              placeholder="Body Content"
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="product">Product:</label>
-            <Field
-              className="input form-control"
-              name="product"
-              component="input"
-              type="text"
-              placeholder="Product"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="convertrIframeSlug">Convertr iframe Slug:</label>
-            <Field
-              className="input form-control"
-              name="convertrIframeSlug"
-              component="input"
-              type="text"
-              placeholder="ConvertrIframeSlug"
-            />
-          </div>
-          <div className="card">
+          <div className={`card ${displayFields(['business'])}`}>
             <div className="card-header">
-            Bullet List
+              Body Call to Action
             </div>
-          <div className="card-body">
-          <div className="form-group">
-              <label htmlFor="bulletListTitle">Bullet List Title:</label>
-              <Field
-                className="input form-control"
-                name="bulletListTitle"
-                component="input"
-                type="text"
-                placeholder="bulletListTitle"
-              />
-            </div>
-            <div className="form-group">
-              <FieldArray name="bulletList" component={bulletList} />
+            <div className="card-body">
+                <div className="form-group">
+                <label htmlFor="bodyContent">CTA Text:</label>
+                  <Field
+                    className="input form-control"
+                    name="ctaText"
+                    component="input"
+                    type="text"
+                    placeholder="CTA Text"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="bodyContent">CTA URL:</label>
+                  <Field
+                    className="input form-control"
+                    name="ctaURL"
+                    component="input"
+                    type="text"
+                    placeholder="CTA URL"
+                  />
+                </div>
             </div>
           </div>
-          </div>
-          <div className={`card ${displayFields(['toolkitA'])}`}>
+          <div className={`card ${displayFields(['business'])}`}>
             <div className="card-header">
-              Assets
+              Contact Info
+            </div>
+            <div className="card-body">
+                <div className="form-group">
+                <label htmlFor="address1">Address #1:</label>
+                  <Field
+                    className="input form-control"
+                    name="address1"
+                    component="input"
+                    type="address"
+                    placeholder="Address #1"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="address2">Address #2:</label>
+                  <Field
+                    className="input form-control"
+                    name="address2"
+                    component="input"
+                    type="text"
+                    placeholder="Address #2"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="city">City:</label>
+                  <Field
+                    className="input form-control"
+                    name="city"
+                    component="input"
+                    type="city"
+                    placeholder="City"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="state">State:</label>
+                  <Field
+                    className="input form-control"
+                    name="state"
+                    component="input"
+                    type="state"
+                    placeholder="State"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="zipcode">Zipcode:</label>
+                  <Field
+                    className="input form-control"
+                    name="zipcode"
+                    component="input"
+                    type="zipcode"
+                    placeholder="Zip"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="phone">Phone:</label>
+                  <Field
+                    className="input form-control"
+                    name="phone"
+                    component="input"
+                    type="phone"
+                    placeholder="(111) 111 1111"
+                  />
+                </div>
+                <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                  <Field
+                    className="input form-control"
+                    name="email"
+                    component="input"
+                    type="email"
+                    placeholder="email@company.com"
+                  />
+                </div>
+            </div>
+          </div>
+          <div
+            className="card"
+          >
+            <div className="card-header">
+              Nav Items
             </div>
             <div className="card-body">
               <div className="form-group">
-                <FieldArray name="assetList" component={bulletList} />
+                <FieldArray name="navItems" component={renderNavItems} />
               </div>
             </div>
           </div>
           <div
-            className={`card ${displayFields(['toolkitB', 'toolkitC'])}`}
+            className={`card ${displayFields(['full-width', 'scrolling-nav'])}`}
           >
             <div className="card-header">
-              Assets
+              Sections
             </div>
             <div className="card-body">
               <div className="form-group">
-                <FieldArray name="assets" component={renderAssets} />
+                <FieldArray name="sections" component={renderSections} />
+              </div>
+            </div>
+          </div>
+          <div
+            className={`card ${displayFields(['business'])}`}
+          >
+            <div className="card-header">
+              Cards
+            </div>
+            <div className="card-body">
+              <div className="form-group">
+                <FieldArray name="cards" component={renderCards} />
               </div>
             </div>
           </div>
@@ -286,11 +456,8 @@ class Form extends React.Component {
 }
 
 const initialValues = {
-  partnerName: "[PARTNER]",
-  OLI: "000000",
   templateSelect: "",
-  partnerLogo: "http://placehold.it/100x25",
-  product: "[PRODUCT]",
+  siteTitle: "Site Title",
   heading: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   headerImage:
     "https://edge.spiceworksstatic.com/service.client-interactive/2018/zoho/291441/manageengine-header-291441-dec2018-s.jpg",
@@ -298,28 +465,70 @@ const initialValues = {
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at commodi...",
   assetThumb:
     "http://placehold.it/300",
-  mainContent:
+  bodyHeading: "What We Do",
+  bodyContent:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam odio praesentium provident qui repellat rerum sed temporibus ullam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae voluptate voluptatem? Ad autem consequuntur culpa dolorem id labore officia quia recusandae saepe veniam.",
-  convertrIframeSlug: "general-lp-template",
-  bulletListTitle: "What you'll learn:",
-  bulletList: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit", "Lorem ipsum dolor sit amet, consectetur adipiscing elit"],
-  assetList: ["Asset  1 Title Lorem ipsum dolor sit", "Asset  1 Title Lorem ipsum dolor sit", "Asset  1 Title Lorem ipsum dolor sit"],
-  assets: [
+  cards: [
     {
-      title: "Asset 1",
-      image: "http://placehold.it/100"
+      title: "Card 1",
+      image: "http://placehold.it/100",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      link: {
+        text: "Learn More",
+        url: ""
+      }
     },
     {
-      title: "Asset 2",
-      image: "http://placehold.it/100"
+      title: "Card 2",
+      image: "http://placehold.it/100",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      link: {
+        text: "Learn More",
+        url: ""
+      }
     },
     {
-      title: "Asset 3",
-      image: "http://placehold.it/100"
+      title: "Card 3",
+      image: "http://placehold.it/100",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      link: {
+        text: "Learn More",
+        url: ""
+      }
     },
     {
-      title: "Asset 4",
-      image: "http://placehold.it/100"
+      title: "Card 4",
+      image: "http://placehold.it/100",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      link: {
+        text: "Learn More",
+        url: ""
+      }
+    }
+  ],
+  sections: [
+    {
+      heading: "Section 1",
+      subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: "http://placehold.it/100",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    {
+      heading: "Section 2",
+      subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: "http://placehold.it/100",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+  ],
+  navItems: [
+    {
+      item: "About",
+    },
+    {
+      item: "Services",
+    },
+    {
+      item: "Contact",
     }
   ]
 };
