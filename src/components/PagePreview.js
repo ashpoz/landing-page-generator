@@ -109,6 +109,9 @@ class PagePreview extends React.Component {
       });
     }
 
+    const htmlStylesheets = `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    `
+
     const htmlScripts = `
     <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -146,8 +149,6 @@ class PagePreview extends React.Component {
               </div>
             </div>
           </div>
-          <script src="vendor/jquery/jquery.slim.min.js"></script>
-          <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         </>
       );
     } else if (this.props.templateSelect === "business") {
@@ -299,9 +300,10 @@ class PagePreview extends React.Component {
           </footer>
 
 
-          <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-          <script src="js/scrolling-nav.js"></script>
+          {/* TODO: figure out a way to add script, or just add js code output */}
+          {/* <script>
+          !function(e){"use strict";e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function(){if(location.pathname.replace(/^\//,"")==this.pathname.replace(/^\//,"")&&location.hostname==this.hostname){var t=e(this.hash);if((t=t.length?t:e("[name="+this.hash.slice(1)+"]")).length)return e("html, body").animate({scrollTop:t.offset().top-56},1e3,"easeInOutExpo"),!1}}),e(".js-scroll-trigger").click(function(){e(".navbar-collapse").collapse("hide")}),e("body").scrollspy({target:"#mainNav",offset:56})}(jQuery);
+          </script> */}
 
         </div>
       );
@@ -349,7 +351,8 @@ class PagePreview extends React.Component {
       );
     }
 
-    output = ReactDOMServer.renderToStaticMarkup(htmlOutput)
+    output += htmlStylesheets;
+    output += ReactDOMServer.renderToStaticMarkup(htmlOutput)
     .concat(htmlScripts);
     ;
 
