@@ -263,7 +263,7 @@ class Form extends React.Component {
               name="headerImage"
               component="input"
               type="text"
-              placeholder="https://edge.spiceworksstatic.com/service.client-interactive/2018/zoho/291441/manageengine-header-291441-dec2018-s.jpg"
+              placeholder="http://placehold.it/1200x600"
             />
           </div>
           <div className="form-group">
@@ -460,7 +460,7 @@ const initialValues = {
   siteTitle: "Site Title",
   heading: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
   headerImage:
-    "https://edge.spiceworksstatic.com/service.client-interactive/2018/zoho/291441/manageengine-header-291441-dec2018-s.jpg",
+    "http://placehold.it/1200x600",
   subheading:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at commodi...",
   assetThumb:

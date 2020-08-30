@@ -1,3 +1,9 @@
+# Landing Page Generator
+
+This app helps a simple HTML landing page using some of [Start Bootstrap's](https://startbootstrap.com/) templates by filling out some form fields, and outputting the necessary HTML/CSS code. 
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -26,6 +32,10 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm deploy`
+
+Runs the app in production mode on the project's github domain [https://hellomaryjo.github.io/landing-page-generator](https://hellomaryjo.github.io/landing-page-generator)
 
 ### `npm run eject`
 
