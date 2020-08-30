@@ -468,6 +468,15 @@ const initialValues = {
   bodyHeading: "What We Do",
   bodyContent:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis deserunt dolore et fugiat hic incidunt nemo nulla, numquam odio praesentium provident qui repellat rerum sed temporibus ullam voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eaque, esse fugit laboriosam reiciendis reprehenderit repudiandae voluptate voluptatem? Ad autem consequuntur culpa dolorem id labore officia quia recusandae saepe veniam.",
+  address1: '1234 Some Rd.',
+  address2: '',
+  city: 'Austin',
+  state: 'TX',
+  zipcode: '78701',
+  phone: '(111) 111-1111',
+  email: 'email@gmail.com',
+  ctaText: 'Learn More',
+  ctaURL: '#',
   cards: [
     {
       title: "Card 1",

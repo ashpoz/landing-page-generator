@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Prism from "prismjs";
 import ClipboardJS from "clipboard";
-import { lpStyles } from "../data/lp-styles";
+import { styles } from "../data/styles";
 import "./css/prism.scss";
 import "./css/CodeOutput.scss";
 
@@ -38,7 +38,7 @@ class CodeOutput extends React.Component {
             </button>
             </div>
             <pre>
-              <code id="css" className="language-css">{lpStyles.css}</code>
+              <code id="css" className="language-css">{styles[this.props.css]}</code>
             </pre>
           </div>
         </div>
@@ -49,7 +49,8 @@ class CodeOutput extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    html: state.html.output
+    html: state.html.output,
+    css: state.form.lpForm.values.templateSelect
   };
 };
 

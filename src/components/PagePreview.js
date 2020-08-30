@@ -59,7 +59,7 @@ class PagePreview extends React.Component {
                   <p className="card-text">{val.body}</p>
                 </div>
                 <div className="card-footer">
-                  <a href={val.link.url} className="btn btn-primary">{val.link.text}</a>
+                  <a href={val.link.url} className="btn btn-primary d-block">{val.link.text}</a>
                 </div>
               </div>
             </div>
@@ -108,6 +108,13 @@ class PagePreview extends React.Component {
         }
       });
     }
+
+    const htmlScripts = `
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+    crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>`
 
     if (this.props.templateSelect === "bare") {
       htmlOutput = (
@@ -184,7 +191,7 @@ class PagePreview extends React.Component {
                 <h2>{this.props.bodyHeading}</h2>
                 <hr />
                 <p>{this.props.bodyContent}</p>
-                <a className="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+                <a className="btn btn-primary btn-lg" href={this.props.ctaURL}>{this.props.ctaText}</a>
               </div>
               <div className="col-md-4 mb-5">
                 <h2>Contact Us</h2>
@@ -193,14 +200,14 @@ class PagePreview extends React.Component {
                   <strong>{this.props.siteTitle}</strong>
                   <br />{this.props.address1}
                   <br />{this.props.address2}
-                  <br />{this.props.city}, {this.props.state} {this.props.zip}
+                  <br />{this.props.city} {(this.props.state) ? `, ${this.props.state}` : ''} {this.props.zipcode}
                   <br />
                 </div>
                 <div>
-                  <abbr title="Phone">P:</abbr>
+                  <abbr title="Phone">P: </abbr>
                   {this.props.phone}
                     <br />
-                  <abbr title="Email">E:</abbr>
+                  <abbr title="Email">E: </abbr>
                   <a href="mailto:#">{this.props.email}</a>
                 </div>
               </div>
@@ -343,7 +350,7 @@ class PagePreview extends React.Component {
     }
 
     output = ReactDOMServer.renderToStaticMarkup(htmlOutput)
-    // .concat()
+    .concat(htmlScripts);
     ;
 
 
@@ -368,7 +375,10 @@ const mapStateToProps = state => ({
   address1: formValueSelector("lpForm")(state, "address1"),
   address2: formValueSelector("lpForm")(state, "address2"),
   state: formValueSelector("lpForm")(state, "state"),
-  zipcode: formValueSelector("lpForm")(state, "zipcode")
+  city: formValueSelector("lpForm")(state, "city"),
+  zipcode: formValueSelector("lpForm")(state, "zipcode"),
+  phone: formValueSelector("lpForm")(state, "phone"),
+  email: formValueSelector("lpForm")(state, "email")
 });
 
 export default connect(mapStateToProps)(PagePreview);
