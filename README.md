@@ -2,6 +2,8 @@
 
 This app helps a simple HTML landing page using some of [Start Bootstrap's](https://startbootstrap.com/) templates by filling out some form fields, and outputting the necessary HTML/CSS code. 
 
+Demo: [https://hellomaryjo.github.io/landing-page-generator](https://hellomaryjo.github.io/landing-page-generator)
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
